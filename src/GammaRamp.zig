@@ -60,7 +60,8 @@ pub inline fn toC(self: GammaRamp) c.GLFWgammaramp {
 
 /// Deinitializes the memory using the allocator iff `.owned = true`.
 pub inline fn deinit(self: GammaRamp, allocator: mem.Allocator) void {
-    if (self.owned) allocator.free(self.red);
+    // Use actual slice length
+    if (self.owned) allocator.free(self.red.ptr[0 .. self.red.len * 3]);
 }
 
 test "conversion" {
