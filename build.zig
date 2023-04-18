@@ -72,8 +72,7 @@ fn testStep(b: *Build, glfw_opts_: GlfwOptions) !*std.build.RunStep {
         .optimize = glfw_opts.optimize,
     }).artifact("vulkan-headers"));
 
-    main_tests.install();
-    return main_tests.run();
+    return b.addRunArtifact(main_tests);
 }
 
 fn testStepShared(b: *Build, glfw_opts_: GlfwOptions) !*std.build.RunStep {
@@ -94,5 +93,5 @@ fn testStepShared(b: *Build, glfw_opts_: GlfwOptions) !*std.build.RunStep {
         .target = glfw_opts.target,
         .optimize = glfw_opts.optimize,
     }).artifact("vulkan-headers"));
-    return main_tests.run();
+    return b.addRunArtifact(main_tests);
 }

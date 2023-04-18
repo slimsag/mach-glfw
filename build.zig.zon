@@ -4,8 +4,8 @@
 
     .dependencies = .{
         .glfw = .{
-            .url = "https://github.com/hexops/glfw/archive/2970adbe164b4e6028e8f42503a5ac631899825d.tar.gz",
-            .hash = "1220c33d0f03c7db7389664fca707009398ea3cb97a40daff282f9a7c04e1303af4c",
+            .url = "https://github.com/hexops/glfw/archive/cfd39a50b3e629e684b245949a33c448e31d15c2.tar.gz",
+            .hash = "1220fc241cfbdb4a2f3e47552504b92fd6863ab3fe72c87d44aea93c1b6428bd5d80",
         },
     },
 }
