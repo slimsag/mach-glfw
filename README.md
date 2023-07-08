@@ -152,6 +152,10 @@ if (glfw.getError()) |err| {
 Note that the above example relies on GLFW's saved error being empty; otherwise, previously emitted errors may be mistaken for an error caused by `window.getPos()`.
 If your application frequently ignores errors, it may be necessary to call `glfw.clearError()` or `defer glfw.clearError()` to ensure a clean slate for future error handling.
 
+## GLFW version
+
+For now mach/glfw tracks the latest `master` revision of GLFW, as recorded [in this file](https://github.com/hexops-graveyard/glfw/blob/main/VERSION), as this version has critical undefined behavior fixes required for GLFW to work with Zig. We will switch to stable releases of GLFW once GLFW 3.4 is tagged.
+
 ## Join the community
 
 Join the Mach engine community [on Discord](https://discord.gg/XNG3NZgCqp) to discuss this project, ask questions, get help, etc.
@@ -159,9 +163,3 @@ Join the Mach engine community [on Discord](https://discord.gg/XNG3NZgCqp) to di
 ## Issues
 
 Issues are tracked in the [main Mach repository](https://github.com/hexops/mach/issues?q=is%3Aissue+is%3Aopen+label%3Aglfw).
-
-## Contributing
-
-Contributions are very welcome. Pull requests must be sent to [the main repository](https://github.com/hexops/mach/tree/main/libs/glfw) to avoid some complex merge conflicts we'd get by accepting contributions in both repositories. Once the changes are merged there, they'll get sync'd to this repository automatically.
-
-For now mach/glfw tracks the latest `master` revision of GLFW, as recorded [in this file](https://github.com/hexops-graveyard/glfw/blob/main/VERSION), as this version has critical undefined behavior fixes required for GLFW to work with Zig. We will switch to stable releases of GLFW once GLFW 3.4 is tagged.
