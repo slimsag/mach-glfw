@@ -50,7 +50,9 @@ pub fn Native(comptime options: BackendOptions) type {
         if (options.wayland) @cDefine("GLFW_EXPOSE_NATIVE_WAYLAND", "1");
         if (options.egl) @cDefine("GLFW_EXPOSE_NATIVE_EGL", "1");
         if (options.osmesa) @cDefine("GLFW_EXPOSE_NATIVE_OSMESA", "1");
-        @cInclude("glfw_native.h");
+        @cDefine("__kernel_ptr_semantics", "");
+        @cInclude("GLFW/glfw3.h");
+        @cInclude("GLFW/glfw3native.h");
     });
 
     return struct {
