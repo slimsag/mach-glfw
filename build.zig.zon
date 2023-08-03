@@ -3,8 +3,8 @@
     .version = "0.2.0",
     .dependencies = .{
         .glfw = .{
-            .url = "https://pkg.machengine.org/glfw/f143c6e0d5f72c3a22d3a693ae82f3abe03a6caa.tar.gz",
-            .hash = "12205ac409b762a594efec201adf5080c02c511f359cf967eff6af2772b72350c152",
+            .url = "https://pkg.machengine.org/glfw/9cdc810bae1bd89fa7273000f21f7fd17c886a9d.tar.gz",
+            .hash = "1220c3ecdec5413142a7ee7ec07ca0d86e4455550145ccf398835fa8bcf8be3df169",
         },
         .direct3d_headers = .{
             .url = "https://pkg.machengine.org/direct3d-headers/0da8bd6ffb495999d54309cd88a73275203f5041.tar.gz",
