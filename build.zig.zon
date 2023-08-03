@@ -3,12 +3,12 @@
     .version = "0.2.0",
     .dependencies = .{
         .glfw = .{
-            .url = "https://pkg.machengine.org/glfw/0e4cdba4216c6def0423462a2f21fef80683d56d.tar.gz",
-            .hash = "1220a0b036095c2c54af347c86514ed9dab431299f0140b0e434ed119f85a976c32b",
+            .url = "https://pkg.machengine.org/glfw/ede564de79cb92d3a9a2df019b66ce61599f36f1.tar.gz",
+            .hash = "12206ace4b1f06a780e4c723c708b41035e04bbe2cfcfe222b9247cbcab3493b956d",
         },
         .direct3d_headers = .{
-            .url = "https://pkg.machengine.org/direct3d-headers/773dce3f079eecdccc7c71d1318a0741649d568b.tar.gz",
-            .hash = "12200d2155216c5eb5f111282cd355b5433cad6a68fd040294e695149cba329f7c12",
+            .url = "https://pkg.machengine.org/direct3d-headers/0da8bd6ffb495999d54309cd88a73275203f5041.tar.gz",
+            .hash = "12208468fa54ffe7978fcdeecca1ef1c7b01a0b5ee8ef2f4ca50ceb61997c87eacb3",
         },
         .vulkan_headers = .{
             .url = "https://pkg.machengine.org/vulkan-headers/e1b061ff624531e82a7daea5dbd56c07e08bf0be.tar.gz",
