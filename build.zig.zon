@@ -3,24 +3,24 @@
     .version = "0.2.0",
     .dependencies = .{
         .glfw = .{
-            .url = "https://pkg.machengine.org/glfw/ede564de79cb92d3a9a2df019b66ce61599f36f1.tar.gz",
-            .hash = "12206ace4b1f06a780e4c723c708b41035e04bbe2cfcfe222b9247cbcab3493b956d",
+            .url = "https://pkg.machengine.org/glfw/f143c6e0d5f72c3a22d3a693ae82f3abe03a6caa.tar.gz",
+            .hash = "12205ac409b762a594efec201adf5080c02c511f359cf967eff6af2772b72350c152",
         },
         .direct3d_headers = .{
             .url = "https://pkg.machengine.org/direct3d-headers/0da8bd6ffb495999d54309cd88a73275203f5041.tar.gz",
             .hash = "12208468fa54ffe7978fcdeecca1ef1c7b01a0b5ee8ef2f4ca50ceb61997c87eacb3",
         },
         .vulkan_headers = .{
-            .url = "https://pkg.machengine.org/vulkan-headers/e1b061ff624531e82a7daea5dbd56c07e08bf0be.tar.gz",
-            .hash = "12204967f9d07fda3af6a21d6ab71fb832da2186176c530a7a14aa96043537399e6b",
+            .url = "https://pkg.machengine.org/vulkan-headers/778dc5815d2901fc7ac82288c207428e8a74201e.tar.gz",
+            .hash = "12205b5d6d1281995d0d402d2675c8989f2b096035f7216fe039e1a20dd7cf67c447",
         },
         .wayland_headers = .{
-            .url = "https://pkg.machengine.org/wayland-headers/7bf46f3d60edab2171643ff85770c392ef62704d.tar.gz",
-            .hash = "1220689912c40c0880b094f748199c490810d4fa4c58ce1ef9058ce97f46ee28496a",
+            .url = "https://pkg.machengine.org/wayland-headers/762824d2032838f7990e9732c5de3e4e0c5bdcba.tar.gz",
+            .hash = "122027a722996a93dbb25a433941a573241070ae664b6285fa413358759552f04c02",
         },
         .x11_headers = .{
-            .url = "https://pkg.machengine.org/x11-headers/99af89c7bfdc7db503f3a7003571f8e81bcd09f3.tar.gz",
-            .hash = "1220e6bd3186841c1da38d862d52ba88dec9633d24f409eda27627321937419a0ddb",
+            .url = "https://pkg.machengine.org/x11-headers/4b87851e213eaf001d4a0e1ce2cf96ddbc93caed.tar.gz",
+            .hash = "1220c3da8f10e4e48347ce4e20b42403decbca4026dc84b6c90a91ecae0377e6d4da",
         },
     },
 }
