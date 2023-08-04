@@ -38,23 +38,25 @@ pub fn build(b: *Build) !void {
     });
 
     main_tests.linkLibrary(lib);
-    // TODO(build-system): linking the library above doesn't seem to transitively carry over the
-    // headers for dependencies already linked to `lib`, so we have to add them ourselves:
-    {
-        main_tests.linkLibrary(b.dependency("glfw", .{
-            .target = main_tests.target,
-            .optimize = main_tests.optimize,
-        }).artifact("glfw"));
-        main_tests.linkLibrary(b.dependency("vulkan_headers", .{
-            .target = main_tests.target,
-            .optimize = main_tests.optimize,
-        }).artifact("vulkan-headers"));
-        if (main_tests.target_info.target.os.tag == .macos) {
-            @import("xcode_frameworks").addPaths(b, main_tests);
-        }
-    }
-
+    try link(b, main_tests);
     b.installArtifact(main_tests);
 
     test_step.dependOn(&b.addRunArtifact(main_tests).step);
+}
+
+pub fn link(b: *std.Build, step: *std.build.CompileStep) !void {
+    @import("glfw").addPaths(step);
+    if (step.target.toTarget().isDarwin()) @import("xcode_frameworks").addPaths(b, step);
+    step.linkLibrary(b.dependency("vulkan_headers", .{
+        .target = step.target,
+        .optimize = step.optimize,
+    }).artifact("vulkan-headers"));
+    step.linkLibrary(b.dependency("x11_headers", .{
+        .target = step.target,
+        .optimize = step.optimize,
+    }).artifact("x11-headers"));
+    step.linkLibrary(b.dependency("wayland_headers", .{
+        .target = step.target,
+        .optimize = step.optimize,
+    }).artifact("wayland-headers"));
 }
