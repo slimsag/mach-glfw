@@ -50,7 +50,7 @@ pub fn build(b: *Build) !void {
             .optimize = main_tests.optimize,
         }).artifact("vulkan-headers"));
         if (main_tests.target_info.target.os.tag == .macos) {
-            @import("xcode_frameworks").addPaths(b, lib);
+            @import("xcode_frameworks").addPaths(b, main_tests);
         }
     }
 
