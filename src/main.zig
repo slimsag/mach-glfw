@@ -38,13 +38,30 @@ pub const Cursor = @import("Cursor.zig");
 pub const Native = @import("native.zig").Native;
 pub const BackendOptions = @import("native.zig").BackendOptions;
 pub const Key = key.Key;
-
-pub usingnamespace @import("clipboard.zig");
-pub usingnamespace @import("opengl.zig");
-pub usingnamespace @import("vulkan.zig");
-pub usingnamespace @import("time.zig");
-pub usingnamespace @import("hat.zig");
-pub usingnamespace @import("mod.zig");
+pub const setClipboardString = @import("clipboard.zig").setClipboardString;
+pub const getClipboardString = @import("clipboard.zig").getClipboardString;
+pub const makeContextCurrent = @import("opengl.zig").makeContextCurrent;
+pub const getCurrentContext = @import("opengl.zig").getCurrentContext;
+pub const swapInterval = @import("opengl.zig").swapInterval;
+pub const extensionSupported = @import("opengl.zig").extensionSupported;
+pub const GLProc = @import("opengl.zig").GLProc;
+pub const getProcAddress = @import("opengl.zig").getProcAddress;
+pub const initVulkanLoader = @import("vulkan.zig").initVulkanLoader;
+pub const VKGetInstanceProcAddr = @import("vulkan.zig").VKGetInstanceProcAddr;
+pub const vulkanSupported = @import("vulkan.zig").vulkanSupported;
+pub const getRequiredInstanceExtensions = @import("vulkan.zig").getRequiredInstanceExtensions;
+pub const VKProc = @import("vulkan.zig").VKProc;
+pub const getInstanceProcAddress = @import("vulkan.zig").getInstanceProcAddress;
+pub const getPhysicalDevicePresentationSupport = @import("vulkan.zig").getPhysicalDevicePresentationSupport;
+pub const createWindowSurface = @import("vulkan.zig").createWindowSurface;
+pub const getTime = @import("time.zig").getTime;
+pub const setTime = @import("time.zig").setTime;
+pub const getTimerValue = @import("time.zig").getTimerValue;
+pub const getTimerFrequency = @import("time.zig").getTimerFrequency;
+pub const Hat = @import("hat.zig").Hat;
+pub const RawHat = @import("hat.zig").RawHat;
+pub const Mods = @import("mod.zig").Mods;
+pub const RawMods = @import("mod.zig").RawMods;
 
 const internal_debug = @import("internal_debug.zig");
 
