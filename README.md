@@ -1,7 +1,7 @@
 <a href="https://machengine.org/pkg/mach-glfw">
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://machengine.org/assets/mach/glfw-full-dark.svg">
-        <img alt="mach-gpu" src="https://machengine.org/assets/mach/glfw-full-light.svg" height="150px">
+        <img alt="mach-glfw" src="https://machengine.org/assets/mach/glfw-full-light.svg" height="150px">
     </picture>
 </a>
 
