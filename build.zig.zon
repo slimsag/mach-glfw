@@ -7,16 +7,16 @@
             .hash = "1220293eae4bf67a7c27a18a8133621337cde91a97bc6859a9431b3b2d4217dfb5fb",
         },
         .glfw = .{
-            .url = "https://pkg.machengine.org/glfw/77086fe2c1bbbf55fa5f2572eb6a604bc3be639f.tar.gz",
-            .hash = "1220667f4ae9cab35b27fa129e265457be42a2f11f2ca57d9ea5d7f56213cbc3ffde",
+            .url = "https://pkg.machengine.org/glfw/72e9e4ed3f829bc718f58f00397a4d7797d4623d.tar.gz",
+            .hash = "1220a224ebb07d27697a6710abf7bdb3e8117c68712a70e959c27ac6a6534f575eae",
         },
         .direct3d_headers = .{
             .url = "https://pkg.machengine.org/direct3d-headers/c878b57ed63e4cf320f9c2f48991f8c3146f4e20.tar.gz",
             .hash = "1220f42f404cce90b06fcc76678f8dadf4f8d14f2c81df085b3ea7202d7625d0274b",
         },
         .vulkan_headers = .{
-            .url = "https://pkg.machengine.org/vulkan-headers/b10fb77f54d2d24b04267e1a84e4f63bad9d6d33.tar.gz",
-            .hash = "12209df6486512fccc34a78cc55f2d761f58f36ddb651d6d0fa8c2d1b1f59c6117ad",
+            .url = "https://pkg.machengine.org/vulkan-headers/48d6b26fac5068315a26bd19db13ce488dfd8abb.tar.gz",
+            .hash = "122076bb4b63f26ed1bb94108b24bf875720e55ea4992b84ab3980a0320e68eebc65",
         },
         .wayland_headers = .{
             .url = "https://pkg.machengine.org/wayland-headers/3255fb47a6ae42259df17558c6c0db4f59036e68.tar.gz",

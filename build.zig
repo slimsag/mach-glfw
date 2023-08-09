@@ -22,10 +22,7 @@ pub fn build(b: *Build) !void {
     //     .target = target,
     //     .optimize = optimize,
     // });
-    // lib.linkLibrary(b.dependency("glfw", .{
-    //     .target = lib.target,
-    //     .optimize = lib.optimize,
-    // }).artifact("glfw"));
+    // lib.linkLibrary(@import("glfw").lib(b, lib.optimize, lib.target));
     // lib.linkLibrary(b.dependency("vulkan_headers", .{
     //     .target = lib.target,
     //     .optimize = lib.optimize,
@@ -51,10 +48,7 @@ pub fn build(b: *Build) !void {
 }
 
 pub fn link(b: *std.Build, step: *std.build.CompileStep) !void {
-    step.linkLibrary(b.dependency("glfw", .{
-        .target = step.target,
-        .optimize = step.optimize,
-    }).artifact("glfw"));
+    step.linkLibrary(@import("glfw").lib(b, step.optimize, step.target));
     @import("glfw").addPaths(step);
     if (step.target.toTarget().isDarwin()) @import("xcode_frameworks").addPaths(b, step);
     step.linkLibrary(b.dependency("vulkan_headers", .{
