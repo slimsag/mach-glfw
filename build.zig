@@ -32,7 +32,8 @@ pub fn build(b: *Build) !void {
     // }
     // b.installArtifact(lib);
 
-    // const test_step = b.step("test", "Run library tests");
+    const test_step = b.step("test", "Run library tests");
+    _ = test_step;
     // const main_tests = b.addTest(.{
     //     .name = "glfw-tests",
     //     .root_source_file = .{ .path = "src/main.zig" },
