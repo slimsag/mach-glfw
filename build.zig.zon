@@ -7,24 +7,24 @@
             .hash = "1220293eae4bf67a7c27a18a8133621337cde91a97bc6859a9431b3b2d4217dfb5fb",
         },
         .glfw = .{
-            .url = "https://pkg.machengine.org/glfw/72e9e4ed3f829bc718f58f00397a4d7797d4623d.tar.gz",
-            .hash = "1220a224ebb07d27697a6710abf7bdb3e8117c68712a70e959c27ac6a6534f575eae",
+            .url = "https://pkg.machengine.org/glfw/b58903a759b8f8111a44eb18118e6440b6cc26b6.tar.gz",
+            .hash = "1220d62af03d3879f1a2b51ff5bcc8156a73b6312bceeba1069b0d66faf47418a992",
         },
         .direct3d_headers = .{
-            .url = "https://pkg.machengine.org/direct3d-headers/c878b57ed63e4cf320f9c2f48991f8c3146f4e20.tar.gz",
-            .hash = "1220f42f404cce90b06fcc76678f8dadf4f8d14f2c81df085b3ea7202d7625d0274b",
+            .url = "https://pkg.machengine.org/direct3d-headers/c02ba4ba3f9473560e41487090ee6bfbbc44c75b.tar.gz",
+            .hash = "1220b4a3be5bd4d0c4a206c909b07579070f4fa8c83dd82170ed1db846b0eea1ae9d",
         },
         .vulkan_headers = .{
-            .url = "https://pkg.machengine.org/vulkan-headers/48d6b26fac5068315a26bd19db13ce488dfd8abb.tar.gz",
-            .hash = "122076bb4b63f26ed1bb94108b24bf875720e55ea4992b84ab3980a0320e68eebc65",
+            .url = "https://pkg.machengine.org/vulkan-headers/0212dd8b71531d0cec8378ce8fb1721a0df7420a.tar.gz",
+            .hash = "1220a8b642edf8ef522e468cfe9a1803507472461b1041be717294ca484d1361afb0",
         },
         .wayland_headers = .{
-            .url = "https://pkg.machengine.org/wayland-headers/3255fb47a6ae42259df17558c6c0db4f59036e68.tar.gz",
-            .hash = "122047bda37ce846be8f120fe920d909a28b257d1ec989b0f753202c8d0e95674527",
+            .url = "https://pkg.machengine.org/wayland-headers/509275fb6222181a97026c884d411bd013da680b.tar.gz",
+            .hash = "12202cf6230788d948e5ee2afa26d4f6cc4994ae1bf0c1c832535b920717a1174223",
         },
         .x11_headers = .{
-            .url = "https://pkg.machengine.org/x11-headers/d61bdcece6ad9e9b6327247ff59ef270f7d08ad3.tar.gz",
-            .hash = "1220bfcac525c1e3939903700c75d9925ad8b7abf0f95401e4dced870f1f22de5026",
+            .url = "https://pkg.machengine.org/x11-headers/991ad9bf599df04aaa5332e536712a8476838ee3.tar.gz",
+            .hash = "12205bd95b9cc9cb08dd6b55f5842d8fae67a12eed01092c54f021060931815f711e",
         },
     },
 }
