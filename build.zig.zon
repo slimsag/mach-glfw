@@ -11,8 +11,8 @@
             .hash = "1220fe0763e9722d56d3f93f8740e077fccf338d9697f08239d79a1ee27ae5833e62",
         },
         .direct3d_headers = .{
-            .url = "https://pkg.machengine.org/direct3d-headers/c02ba4ba3f9473560e41487090ee6bfbbc44c75b.tar.gz",
-            .hash = "1220b4a3be5bd4d0c4a206c909b07579070f4fa8c83dd82170ed1db846b0eea1ae9d",
+            .url = "https://pkg.machengine.org/direct3d-headers/aef21c3b1f883a427e7547b2be26d9b1496ce726.tar.gz",
+            .hash = "1220c9f9969d4c28c9df3382d08275d60296a482d0b731014e8d422e10dc7b200a97",
         },
         .vulkan_headers = .{
             .url = "https://pkg.machengine.org/vulkan-headers/0212dd8b71531d0cec8378ce8fb1721a0df7420a.tar.gz",
