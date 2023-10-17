@@ -12,7 +12,7 @@ pub fn build(b: *Build) !void {
 
     const lib = b.addStaticLibrary(.{
         .name = "mach-glfw",
-        .root_source_file = .{ .path = "stub.c" },
+        .root_source_file = b.addWriteFiles().add("empty.c", ""),
         .target = target,
         .optimize = optimize,
     });
@@ -35,22 +35,10 @@ pub fn build(b: *Build) !void {
 }
 
 pub fn link(b: *std.Build, step: *std.build.CompileStep) void {
-    if (step.target.toTarget().isDarwin()) @import("xcode_frameworks").addPaths(b, step);
-    @import("glfw").addPaths(step);
-    step.linkLibrary(b.dependency("glfw", .{
+    const glfw_dep = b.dependency("glfw", .{
         .target = step.target,
         .optimize = step.optimize,
-    }).artifact("glfw"));
-    step.linkLibrary(b.dependency("vulkan_headers", .{
-        .target = step.target,
-        .optimize = step.optimize,
-    }).artifact("vulkan-headers"));
-    step.linkLibrary(b.dependency("x11_headers", .{
-        .target = step.target,
-        .optimize = step.optimize,
-    }).artifact("x11-headers"));
-    step.linkLibrary(b.dependency("wayland_headers", .{
-        .target = step.target,
-        .optimize = step.optimize,
-    }).artifact("wayland-headers"));
+    });
+    @import("glfw").link(glfw_dep.builder, step);
+    step.linkLibrary(glfw_dep.artifact("glfw"));
 }

@@ -1,30 +1,19 @@
 .{
     .name = "mach-glfw",
     .version = "0.2.0",
+    .paths = .{
+        "src/",
+        "build.zig",
+        "build.zig.zon",
+        "LICENSE",
+        "LICENSE-APACHE",
+        "LICENSE-MIT",
+        "README.md",
+    },
     .dependencies = .{
-        .xcode_frameworks = .{
-            .url = "https://github.com/hexops/xcode-frameworks-pkg/archive/f8b854f9a1f4b4602b4f998ee42588d524d44e52.tar.gz",
-            .hash = "1220ab440d1b8484038d619f743ef6a71e3683d13152eae941aa2d6bcb12fcea3135",
-        },
         .glfw = .{
-            .url = "https://pkg.machengine.org/glfw/92abc63294d389c8f2a546686b6c072930b029e0.tar.gz",
-            .hash = "12205a6ce386007b97e22ef4b78a4f68c98af2cd6e1fde82589191fda79b9de54d0d",
-        },
-        .direct3d_headers = .{
-            .url = "https://pkg.machengine.org/direct3d-headers/563ee4b888784df0614c1bb9c8fc9fc48fa18f2a.tar.gz",
-            .hash = "1220c7fc160384063b9584c6dc766cfcc9a06a392f7549c40cb2ec94e50d9d5110ae",
-        },
-        .vulkan_headers = .{
-            .url = "https://pkg.machengine.org/vulkan-headers/fc495148a910ac7817ce0ec2d5948231806f2ac0.tar.gz",
-            .hash = "12209aeba80369fa8638b82179b47e6742adb98a3a5b01bc518565504a922baad3e4",
-        },
-        .wayland_headers = .{
-            .url = "https://pkg.machengine.org/wayland-headers/82bf14ba6604794c00fd8c3a4818ec32c7cedeba.tar.gz",
-            .hash = "12206781cb884fc8e524e90bea3c4a451e1dc78761b534f5dfb40973771a2fd07c22",
-        },
-        .x11_headers = .{
-            .url = "https://pkg.machengine.org/x11-headers/26d12e9fc0d893085bcb711088a4a19afdff1adc.tar.gz",
-            .hash = "1220371a61d8bb57fce8ee1741f623cc19b0edd7d1b4adc9918663f8a7ef08aa4f3f",
+            .url = "https://pkg.machengine.org/glfw/38e0cc8ff4438866821764fb6107890672d97de6.tar.gz",
+            .hash = "1220da1c3b01ea143a7ff1053c346efe2d91204960744abdd34e28574b20d01c5b22",
         },
     },
 }
