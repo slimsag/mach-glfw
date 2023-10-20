@@ -13,7 +13,7 @@
     .dependencies = .{
         .glfw = .{
             .url = "https://pkg.machengine.org/glfw/e425858a0d13c11f1df73cb38fce6b2f6286e878.tar.gz",
-            .hash = "1220e8c31f0bb91c406dbea3d20979525d6af2c7a168cd3b53b6757381ec0bc8cce8",
+            .hash = "1220cfcc9e91d55352c0caa9fddc4ae4a4df7d1bcb065c5443ac1db48b55eb0d4105",
         },
     },
 }
