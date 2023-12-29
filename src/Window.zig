@@ -2222,7 +2222,7 @@ test "hint int" {
     }
     defer glfw.terminate();
 
-    var focused: i32 = 1;
+    const focused: i32 = 1;
 
     hint(.focused, focused);
     defaultHints();
@@ -2363,8 +2363,8 @@ test "setIcon" {
     defer window.destroy();
 
     // Create an all-red icon image.
-    var width: u32 = 48;
-    var height: u32 = 48;
+    const width: u32 = 48;
+    const height: u32 = 48;
     const icon = try Image.init(allocator, width, height, width * height * 4);
     var x: u32 = 0;
     var y: u32 = 0;
