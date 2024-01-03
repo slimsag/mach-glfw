@@ -7,7 +7,7 @@ pub fn build(b: *Build) !void {
     const target = b.standardTargetOptions(.{});
 
     _ = b.addModule("mach-glfw", .{
-        .source_file = .{ .path = "src/main.zig" },
+        .root_source_file = .{ .path = "src/main.zig" },
     });
 
     const lib = b.addStaticLibrary(.{
@@ -34,10 +34,13 @@ pub fn build(b: *Build) !void {
     test_step.dependOn(&b.addRunArtifact(main_tests).step);
 }
 
-pub fn link(b: *std.Build, step: *std.build.CompileStep) void {
+pub fn link(b: *std.Build, step: *std.Build.Step.Compile) void {
+    const target_triple: []const u8 = step.rootModuleTarget().zigTriple(b.allocator) catch @panic("OOM");
+    const cpu_opts: []const u8 = step.root_module.resolved_target.?.query.serializeCpuAlloc(b.allocator) catch @panic("OOM");
     const glfw_dep = b.dependency("glfw", .{
-        .target = step.target,
-        .optimize = step.optimize,
+        .target = target_triple,
+        .cpu = cpu_opts,
+        .optimize = step.root_module.optimize.?,
     });
     @import("glfw").link(glfw_dep.builder, step);
     step.linkLibrary(glfw_dep.artifact("glfw"));
