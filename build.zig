@@ -6,9 +6,10 @@ pub fn build(b: *Build) !void {
     const optimize = b.standardOptimizeOption(.{});
     const target = b.standardTargetOptions(.{});
 
-    _ = b.addModule("mach-glfw", .{
+    const module = b.addModule("mach-glfw", .{
         .root_source_file = .{ .path = "src/main.zig" },
     });
+    module.addIncludePath(b.dependency("glfw", .{}).path("include"));
 
     const lib = b.addStaticLibrary(.{
         .name = "mach-glfw",
