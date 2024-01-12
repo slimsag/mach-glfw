@@ -520,7 +520,7 @@ pub fn basicTest() !void {
     };
     defer window.destroy();
 
-    var start = std.time.milliTimestamp();
+    const start = std.time.milliTimestamp();
     while (std.time.milliTimestamp() < start + 1000 and !window.shouldClose()) {
         c.glfwPollEvents();
     }
