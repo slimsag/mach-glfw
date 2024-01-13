@@ -39,3 +39,10 @@ pub fn link(b: *std.Build, step: *std.Build.Step.Compile) void {
 pub fn addPaths(step: *std.Build.Step.Compile) void {
     @import("glfw").addPaths(step);
 }
+
+comptime {
+    const min_zig = std.SemanticVersion.parse("0.12.0-dev.2062+804cee3b9") catch unreachable;
+    if (builtin.zig_version.order(min_zig) != .eq) {
+        @compileError(std.fmt.comptimePrint("unsupported Zig version ({}). Required Zig version 2024.1.0-mach: https://machengine.org/about/nominated-zig/#202410-mach", .{builtin.zig_version}));
+    }
+}
