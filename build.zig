@@ -10,10 +10,13 @@ pub fn build(b: *std.Build) !void {
         .optimize = optimize,
     });
 
-    const module = b.addModule("mach-glfw", .{
+    var module = b.addModule("mach-glfw", .{
+        .target = target,
+        .optimize = optimize,
         .root_source_file = .{ .path = "src/main.zig" },
     });
     module.linkLibrary(glfw_dep.artifact("glfw"));
+    @import("glfw").addPaths(module);
 
     const test_step = b.step("test", "Run library tests");
     const main_tests = b.addTest(.{
@@ -23,21 +26,10 @@ pub fn build(b: *std.Build) !void {
         .optimize = optimize,
     });
     main_tests.linkLibrary(glfw_dep.artifact("glfw"));
-    addPaths(main_tests);
+    @import("glfw").addPaths(&main_tests.root_module);
     b.installArtifact(main_tests);
 
     test_step.dependOn(&b.addRunArtifact(main_tests).step);
-}
-
-pub fn link(b: *std.Build, step: *std.Build.Step.Compile) void {
-    _ = b;
-    _ = step;
-
-    @panic(".link(b, step) has been replaced by .addPaths(step)");
-}
-
-pub fn addPaths(step: *std.Build.Step.Compile) void {
-    @import("glfw").addPaths(step);
 }
 
 comptime {
