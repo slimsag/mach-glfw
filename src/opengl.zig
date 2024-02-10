@@ -1,4 +1,5 @@
 const std = @import("std");
+const builtin = @import("builtin");
 
 const c = @import("c.zig").c;
 const Window = @import("Window.zig");
@@ -122,13 +123,12 @@ pub inline fn extensionSupported(extension: [:0]const u8) bool {
     return c.glfwExtensionSupported(extension.ptr) == c.GLFW_TRUE;
 }
 
-const builtin = @import("builtin");
 /// Client API function pointer type.
 ///
 /// Generic function pointer used for returning client API function pointers.
 ///
 /// see also: context_glext, glfwGetProcAddress
-pub const GLProc = *const fn () callconv(.C) void;
+pub const GLProc = *const fn () callconv(if (builtin.os.tag == .windows and builtin.cpu.arch == .x86) .Stdcall else .C) void;
 
 /// Returns the address of the specified function for the current context.
 ///
