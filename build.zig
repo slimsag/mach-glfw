@@ -35,6 +35,6 @@ pub fn build(b: *std.Build) !void {
 comptime {
     const supported_zig = std.SemanticVersion.parse("0.12.0-dev.3180+83e578a18") catch unreachable;
     if (builtin.zig_version.order(supported_zig) != .eq) {
-        @compileError(std.fmt.comptimePrint("unsupported Zig version ({}). Required Zig version 2024.1.0-mach: https://machengine.org/about/nominated-zig/#202410-mach", .{builtin.zig_version}));
+        @compileError(std.fmt.comptimePrint("unsupported Zig version ({}). Required Zig version 2024.3.0-mach: https://machengine.org/about/nominated-zig/#202430-mach", .{builtin.zig_version}));
     }
 }
