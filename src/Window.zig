@@ -282,7 +282,7 @@ pub const Hints = struct {
 /// hints using `glfw.Window.hint`.
 ///
 /// Successful creation does not change which context is current. Before you can use the newly
-/// created context, you need to make it current using `glfw.Window.makeContextCurrent`. For
+/// created context, you need to make it current using `glfw.makeContextCurrent`. For
 /// information about the `share` parameter, see context_sharing.
 ///
 /// The created window, framebuffer and context may differ from what you requested, as not all
