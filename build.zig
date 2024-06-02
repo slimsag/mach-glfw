@@ -8,13 +8,13 @@ pub fn build(b: *std.Build) !void {
     var module = b.addModule("mach-glfw", .{
         .target = target,
         .optimize = optimize,
-        .root_source_file = .{ .path = "src/main.zig" },
+        .root_source_file = b.path("src/main.zig"),
     });
 
     const test_step = b.step("test", "Run library tests");
     const main_tests = b.addTest(.{
         .name = "glfw-tests",
-        .root_source_file = .{ .path = "src/main.zig" },
+        .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,
     });
@@ -35,6 +35,6 @@ pub fn build(b: *std.Build) !void {
 comptime {
     const supported_zig = std.SemanticVersion.parse("0.13.0-dev.351+64ef45eb0") catch unreachable;
     if (builtin.zig_version.order(supported_zig) != .eq) {
-        @compileError(std.fmt.comptimePrint("unsupported Zig version ({}). Required Zig version 2024.3.0-mach: https://machengine.org/about/nominated-zig/#202430-mach", .{builtin.zig_version}));
+        @compileError(std.fmt.comptimePrint("unsupported Zig version ({}). Required Zig version 2024.5.0-mach: https://machengine.org/about/nominated-zig/#202450-mach", .{builtin.zig_version}));
     }
 }
