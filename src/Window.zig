@@ -624,8 +624,8 @@ pub inline fn setSize(self: Window, size: Size) void {
 /// A size with option width/height, used to represent e.g. constraints on a windows size while
 /// allowing specific axis to be unconstrained (null) if desired.
 pub const SizeOptional = struct {
-    width: ?u32,
-    height: ?u32,
+    width: ?u32 = null,
+    height: ?u32 = null,
 };
 
 /// Sets the size limits of the specified window's content area.
