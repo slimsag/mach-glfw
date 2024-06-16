@@ -249,7 +249,7 @@ pub const Hints = struct {
         any = @bitCast(c.GLFW_ANY_POSITION),
     };
 
-    fn set(hints: Hints) void {
+    pub fn set(hints: Hints) void {
         internal_debug.assertInitialized();
         inline for (comptime std.meta.fieldNames(Hint)) |field_name| {
             const hint_tag = @intFromEnum(@field(Hint, field_name));
