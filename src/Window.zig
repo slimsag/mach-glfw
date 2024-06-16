@@ -305,7 +305,7 @@ pub const Hints = struct {
 /// glfw.Window.setMonitor. This will not affect its OpenGL or OpenGL ES context.
 ///
 /// By default, newly created windows use the placement recommended by the window system. To create
-/// the window at a specific position, make it initially invisible using the glfw.version window
+/// the window at a specific position, make it initially invisible using the `visible` window
 /// hint, set its position and then show it.
 ///
 /// As long as at least one full screen window is not iconified, the screensaver is prohibited from
