@@ -249,6 +249,9 @@ pub const Hints = struct {
         any = @bitCast(c.GLFW_ANY_POSITION),
     };
 
+    /// **WARNING:** You should always use `glfw.Window.create` instead of this function whenever possible. Only use this if absolutely neccessary.
+    ///
+    /// Sets `hints` for the next window creation.
     pub fn set(hints: Hints) void {
         internal_debug.assertInitialized();
         inline for (comptime std.meta.fieldNames(Hint)) |field_name| {
