@@ -14,14 +14,10 @@ Perfected GLFW bindings for Zig
 
 See also: [What does a ziggified GLFW API offer?](https://machengine.org/pkg/mach-glfw/)
 
-## Documentation
+## Community maintained
 
-[machengine.org/pkg/mach-glfw](https://machengine.org/pkg/mach-glfw)
+The [Mach engine](https://machengine.org/) project no longer uses GLFW, and so this project is now community-maintained. Pull requests are welcome and will be reviewed. The project will still target [nominated Zig versions](https://machengine.org/about/zig-version/) but may not see regular updates as it is no longer a Mach project (see [hexops/mach#1166](https://github.com/hexops/mach/issues/1166)).
 
-## Join the community
+Note: [hexops/glfw]()
 
-Join the [Mach community on Discord](https://discord.gg/XNG3NZgCqp) to discuss this project, ask questions, get help, etc.
-
-## Issues
-
-Issues are tracked in the [main Mach repository](https://github.com/hexops/mach/issues?q=is%3Aissue+is%3Aopen+label%3Aglfw).
+Some old documentation is available at https://machengine.org/v0.4/pkg/mach-glfw/
