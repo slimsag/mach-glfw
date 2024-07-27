@@ -1,5 +1,5 @@
 .{
-    .name = "mach-glfw",
+    .name = "mach_glfw",
     .version = "0.2.0",
     .paths = .{
         "src/",
