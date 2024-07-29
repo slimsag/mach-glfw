@@ -7,7 +7,7 @@
 
 Perfected, community-maintained Zig bindings for GLFW
 
-A previous version of this document can be found (here)[https://machengine.org/v0.4/pkg/mach-glfw/].
+A previous version of this document can be found [here](https://machengine.org/v0.4/pkg/mach-glfw/).
 
 ## Features of this ziggified GLFW API
  - Zero-fuss installation
@@ -42,8 +42,8 @@ This project targets the latest `master` version of GLFW, allowing its authors t
 with the GLFW author to fix integration hiccups. Following `master` means that new
 changes (such as runtime X11/Wayland switching) can be integrated seamlessly.
 
-This project additionally targets (nominated zig versions)[https://machengine.org/about/zig-version/]
-but may not recieve as regular updates (see (hexops/mach#1166)[https://github.com/hexops/mach/issues/1166])
+This project additionally targets [nominated zig versions](https://machengine.org/about/zig-version/)
+but may not recieve as regular updates (see [hexops/mach#1166](https://github.com/hexops/mach/issues/1166))
 
 ## How-to-use OpenGL, Vulkan, WebGPU, etc
 This project can be used in conjunction with other libraries, as these authors have done:
