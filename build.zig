@@ -31,10 +31,3 @@ pub fn build(b: *std.Build) !void {
         @import("glfw").addPaths(&main_tests.root_module);
     }
 }
-
-comptime {
-    const supported_zig = std.SemanticVersion.parse("0.13.0-dev.351+64ef45eb0") catch unreachable;
-    if (builtin.zig_version.order(supported_zig) != .eq) {
-        @compileError(std.fmt.comptimePrint("unsupported Zig version ({}). Required Zig version 2024.5.0-mach: https://machengine.org/about/nominated-zig/#202450-mach", .{builtin.zig_version}));
-    }
-}
