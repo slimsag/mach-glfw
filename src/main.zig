@@ -303,7 +303,7 @@ pub const PlatformType = enum(c_int) {
 ///
 /// @thread_safety This function must only be called from the main thread.
 fn initHint(hint: InitHint, value: anytype) void {
-    switch (@typeInfo(@TypeOf(value))) {
+    switch (@import("shims.zig").typeInfo(@TypeOf(value))) {
         .int, .comptime_int => {
             c.glfwInitHint(@intFromEnum(hint), @as(c_int, @intCast(value)));
         },

@@ -17,7 +17,7 @@ pub const Hat = packed struct(u8) {
 
     inline fn verifyIntType(comptime IntType: type) void {
         comptime {
-            switch (@typeInfo(IntType)) {
+            switch (@import("shims.zig").typeInfo(IntType)) {
                 .int => {},
                 else => @compileError("Int was not of int type"),
             }

@@ -231,7 +231,7 @@ pub inline fn createWindowSurface(vk_instance: anytype, window: Window, vk_alloc
     internal_debug.assertInitialized();
     // zig-vulkan uses enums to represent opaque pointers:
     // pub const Instance = enum(usize) { null_handle = 0, _ };
-    const instance: c.VkInstance = switch (@typeInfo(@TypeOf(vk_instance))) {
+    const instance: c.VkInstance = switch (@import("shims.zig").typeInfo(@TypeOf(vk_instance))) {
         .@"enum" => @as(c.VkInstance, @ptrFromInt(@intFromEnum(vk_instance))),
         else => @as(c.VkInstance, @ptrCast(vk_instance)),
     };
