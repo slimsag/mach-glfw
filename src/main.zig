@@ -304,10 +304,10 @@ pub const PlatformType = enum(c_int) {
 /// @thread_safety This function must only be called from the main thread.
 fn initHint(hint: InitHint, value: anytype) void {
     switch (@typeInfo(@TypeOf(value))) {
-        .Int, .ComptimeInt => {
+        .int, .comptime_int => {
             c.glfwInitHint(@intFromEnum(hint), @as(c_int, @intCast(value)));
         },
-        .Bool => c.glfwInitHint(@intFromEnum(hint), @as(c_int, @intCast(@intFromBool(value)))),
+        .bool => c.glfwInitHint(@intFromEnum(hint), @as(c_int, @intCast(@intFromBool(value)))),
         else => @compileError("expected a int or bool, got " ++ @typeName(@TypeOf(value))),
     }
 }
