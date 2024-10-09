@@ -16,3 +16,6 @@ zig-out/
 /build/
 /build-*/
 /docgen_tmp/
+
+# remove this after support for Zig 0.12.1 is dropped
+zig-cache/

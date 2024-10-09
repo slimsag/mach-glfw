@@ -1677,7 +1677,7 @@ pub inline fn setInputMode(self: Window, mode: InputMode, value: anytype) void {
     internal_debug.assertInitialized();
     const T = @TypeOf(value);
     std.debug.assert(switch (mode) {
-        .cursor => switch (@typeInfo(T)) {
+        .cursor => switch (@import("shims.zig").typeInfo(T)) {
             .@"enum" => T == InputModeCursor,
             .enum_literal => @hasField(InputModeCursor, @tagName(value)),
             else => false,
@@ -1687,7 +1687,7 @@ pub inline fn setInputMode(self: Window, mode: InputMode, value: anytype) void {
         .lock_key_mods => T == bool,
         .raw_mouse_motion => T == bool,
     });
-    const int_value: c_int = switch (@typeInfo(T)) {
+    const int_value: c_int = switch (@import("shims.zig").typeInfo(T)) {
         .@"enum",
         .enum_literal,
         => @intFromEnum(@as(InputModeCursor, value)),
@@ -2152,7 +2152,7 @@ pub inline fn setDropCallback(self: Window, comptime callback: ?fn (window: Wind
 inline fn hint(h: Hint, value: anytype) void {
     internal_debug.assertInitialized();
     const value_type = @TypeOf(value);
-    const value_type_info: std.builtin.Type = @typeInfo(value_type);
+    const value_type_info: @import("shims.zig").std.builtin.Type = @import("shims.zig").typeInfo(value_type);
 
     switch (value_type_info) {
         .int, .comptime_int => {
@@ -2173,7 +2173,7 @@ inline fn hint(h: Hint, value: anytype) void {
             c.glfwWindowHintString(@intFromEnum(h), &value[0]);
         },
         .pointer => |pointer_info| {
-            const pointed_type = @typeInfo(pointer_info.child);
+            const pointed_type = @import("shims.zig").typeInfo(pointer_info.child);
             switch (pointed_type) {
                 .array => |arr_type| {
                     if (arr_type.child != u8) {
