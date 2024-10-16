@@ -206,7 +206,7 @@ pub inline fn getPhysicalDevicePresentationSupport(
 /// Returns a bool indicating success.
 ///
 /// If an error occurs before the creation call is made, GLFW returns the Vulkan error code most
-/// appropriate for the error. Appropriate use of glfw.vulkanSupported and glfw.getRequiredInstanceExtensions
+/// appropriate"" for the error. Appropriate use of glfw.vulkanSupported and glfw.getRequiredInstanceExtensions
 /// should eliminate almost all occurrences of these errors.
 ///
 /// macos: GLFW prefers the `VK_EXT_metal_surface` extension, with the `VK_MVK_macos_surface`
@@ -232,7 +232,7 @@ pub inline fn createWindowSurface(vk_instance: anytype, window: Window, vk_alloc
     // zig-vulkan uses enums to represent opaque pointers:
     // pub const Instance = enum(usize) { null_handle = 0, _ };
     const instance: c.VkInstance = switch (@typeInfo(@TypeOf(vk_instance))) {
-        .Enum => @as(c.VkInstance, @ptrFromInt(@intFromEnum(vk_instance))),
+        .@"enum" => @as(c.VkInstance, @ptrFromInt(@intFromEnum(vk_instance))),
         else => @as(c.VkInstance, @ptrCast(vk_instance)),
     };
 
