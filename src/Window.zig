@@ -4,6 +4,7 @@ const std = @import("std");
 const testing = std.testing;
 const mem = std.mem;
 const c = @import("c.zig").c;
+const builtin = @import("builtin");
 
 const glfw = @import("main.zig");
 const Image = @import("Image.zig");
@@ -1563,10 +1564,14 @@ pub const InputModeCursor = enum(c_int) {
 pub inline fn setInputModeCursor(self: Window, value: InputModeCursor) void {
     if (value == .disabled) {
         self.setInputMode(.cursor, value);
-        return self.setInputMode(.raw_mouse_motion, true);
+        if(builtin.target.os.tag != .macos) { // Raw mouse motion is not supported on macOS
+            self.setInputMode(.raw_mouse_motion, true);
+        }
     }
     self.setInputMode(.cursor, value);
-    return self.setInputMode(.raw_mouse_motion, false);
+    if(builtin.target.os.tag != .macos) {
+        self.setInputMode(.raw_mouse_motion, false);
+    }
 }
 
 /// Gets the current input mode of the cursor.
