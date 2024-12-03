@@ -10,5 +10,5 @@ pub inline fn assertInitialized() void {
     if (is_debug) std.debug.assert(glfw_initialized);
 }
 pub inline fn assumeInitialized() void {
-    glfw_initialized = true;
+    if (is_debug) glfw_initialized = true;
 }
