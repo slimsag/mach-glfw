@@ -1561,12 +1561,7 @@ pub const InputModeCursor = enum(c_int) {
 
 /// Sets the input mode of the cursor, whether it should behave normally, be hidden, or grabbed.
 pub inline fn setInputModeCursor(self: Window, value: InputModeCursor) void {
-    if (value == .disabled) {
-        self.setInputMode(.cursor, value);
-        return self.setInputMode(.raw_mouse_motion, true);
-    }
-    self.setInputMode(.cursor, value);
-    return self.setInputMode(.raw_mouse_motion, false);
+    return self.setInputMode(InputMode.cursor, value);
 }
 
 /// Gets the current input mode of the cursor.
